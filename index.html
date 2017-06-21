@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript">
+$(function() {
+var search = window.location.search;
+$("#foo").attr("src", $("#foo").attr("src")+search);
+});
+</script>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
@@ -11,12 +17,6 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>Tests by LoriBeth-Blair</title>
-    <script type="text/javascript">
-$(function() {
-var search = window.location.search;
-$("#foo").attr("src", $("#foo").attr("src")+search);
-});
-</script>
   </head>
 
   <body>
@@ -28,7 +28,7 @@ $("#foo").attr("src", $("#foo").attr("src")+search);
         Please try submitting the form capture below to see if the data goes into CRM
         
           <h2>Thing being tested</h2>
-        <iframe id="#foo" src="https://analytics-eu.clickdimensions.com/clickdimensionscom-axhko/pages/1oxivt5reeaumgavxwg1ya.html" allowtransparency="true" width="100%" height="500px" type="text/html" frameborder="0" style="border:0"></iframe>
+        <iframe id="foo" src="https://analytics-eu.clickdimensions.com/clickdimensionscom-axhko/pages/1oxivt5reeaumgavxwg1ya.html" allowtransparency="true" width="100%" height="500px" type="text/html" frameborder="0" style="border:0"></iframe>
 
         
 <section id="downloads" class="clearfix">
