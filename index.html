@@ -38,16 +38,53 @@
         
           <h2>Marissa Test</h2>
         
-<iframe src="http://analytics-eu.clickdimensions.com/clickdimensionscom-acp8v/pages/9rqvfdzeeibaaanohpf5q.html" allowtransparency="true" width="100%" height="500px" type="text/html" frameborder="0" style="border:0"></iframe>
-        
-<script type="text/javascript" src="https://analytics-eu.clickdimensions.com/ts.js" > </script> 
-
 <script type="text/javascript"> 
-  var cdAnalytics = new clickdimensions.Analytics('analytics-eu.clickdimensions.com'); 
-  cdAnalytics.setAccountKey('acP8vbk7mnUmxgTBl7vCkE'); 
-  cdAnalytics.setDomain('clickdimensions.com'); 
-  cdAnalytics.setScore(typeof(cdScore) == "undefined" ? 0 : (cdScore == 0 ? null : cdScore)); 
-  cdAnalytics.trackPage(); 
+  //ClickDimensions Lab Pre-Fill Forms From URL Parameters
+//For more information see http://blog.clickdimensions.com/2014/06/pre-fill-forms-from-links-or-webpages.html
+//NOTE: This code is provided as a sample only for the purposes of illustration.
+
+//This function gets the parameters from the URL and sets variables for the fields to be pre-filled
+function getParm(name)
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.href);
+  
+  //set variables for each of the fields you wish to pre-file
+  //reference them by the ID you found for the field when viewing the source
+  FirstNameField = document.getElementById("f_930abdfd6542e31193fd00155d61b393");
+  hiddenField = document.getElementById("f_90164614fdbce8118104000d3a13dfe5"); // Connects Variable to Hidden Field
+
+  if(results == null)
+    return "";
+  else
+    return results[1];
+}
+
+//This function executes the function above and set the values in the fields
+window.onload=function execParm() {
+    var fName = getParm('First');
+    var uniqueidentifier = (window.location != window.parent.location) ? document.referrer : document.location.href; //Sets another variable to the URL outside of Iframe   
+    FirstNameField.value = fName;
+    hiddenField.value = hiddenfield;
+    hiddenField.value =uniqueidentifier.toString(); //Sets value of your unique identifier
+}
+        </script>
+        <!-- BEGIN WIDGET CODE -->
+  <script type="text/javascript">var loc = "https://analytics-eu.clickdimensions.com/clickdimensionscom-acp8v/pages/";</script>
+<script type="text/javascript" src="https://az551914.vo.msecnd.net/web/v10/CDWidget.js"></script>
+<div pageID="jdbfwwa9eembdganohpf5q"></div>
+<!-- END WIDGET CODE -->
+        
+<script type="text/javascript" src="https://analytics-eu.clickdimensions.com/ts.js" > </script>
+
+<script type="text/javascript">
+  var cdAnalytics = new clickdimensions.Analytics('analytics-eu.clickdimensions.com');
+  cdAnalytics.setAccountKey('acP8vbk7mnUmxgTBl7vCkE');
+  cdAnalytics.setDomain('clickdimensions.com');
+  cdAnalytics.setScore(typeof(cdScore) == "undefined" ? 0 : (cdScore == 0 ? null : cdScore));
+  cdAnalytics.trackPage();
 </script> 
 </body>
 
